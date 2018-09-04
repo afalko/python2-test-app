@@ -23,8 +23,8 @@ pipeline {
                 withCredentials([file(credentialsId: 'gcr-push', variable: 'KEYFILE')]) {
                     sh "docker login -u _json_key --password-stdin https://gcr.io < ${KEYFILE}"
                 }
-                sh "docker tag afalko/alpine-python:${BUILD_ID} gcr.io/eternal-autumn-215306/alpine-python:${BUILD_ID}"
-                sh "docker push gcr.io/eternal-autumn-215306/alpine-python:${BUILD_ID}"
+                sh "docker tag afalko/python2-test-app:${BUILD_ID} gcr.io/eternal-autumn-215306/python2-test-app:${BUILD_ID}"
+                sh "docker push gcr.io/eternal-autumn-215306/python2-test-app:${BUILD_ID}"
             }
         }
         stage('Update Docker Images') {
