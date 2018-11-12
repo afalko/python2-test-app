@@ -1,4 +1,4 @@
-FROM afalko/alpine-python:45
+FROM afalko/alpine-python:46
 
 ADD app.py /
 
